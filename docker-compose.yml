@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  bgg-mcp:
+    build: .
+    image: bgg-mcp:latest
+    container_name: bgg-mcp
+    environment:
+      - NODE_ENV=production
+    # For local development you can uncomment the bind mount to run against source
+    # volumes:
+    #   - ./:/app
+    #   - /app/node_modules
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
