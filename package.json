@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "bin"
   ],
   "scripts": {
   "build": "tsc",
@@ -53,6 +54,9 @@
       "import": "./dist/index.js",
       "require": "./dist/index.js"
     }
+  },
+  "bin": {
+    "bgg-mcp": "./bin/bgg-mcp.js"
   },
   "publishConfig": {
     "access": "public"
