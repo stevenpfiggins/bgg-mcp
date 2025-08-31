@@ -2,16 +2,28 @@
   "name": "bgg-mcp",
   "version": "1.0.0",
   "type": "module",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/index.js",
+  "build": "tsc",
+  "prepare": "npm run build",
+  "prepublishOnly": "npm run build",
+  "start": "node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "description": "MCP server exposing BoardGameGeek APIs as MCP tools (search, details, collections, plays, user info, hot items).",
+  "keywords": [
+    "mcp",
+    "boardgamegeek",
+    "bgg",
+    "mcp-server",
+    "typescript"
+  ],
+  "author": "stevenpfiggins",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "@types/node": "^22.0.0",
     "@types/xml2js": "^0.4.14",
@@ -23,5 +35,26 @@
     "@modelcontextprotocol/sdk": "^1.17.4",
     "xml2js": "^0.6.2",
     "zod": "^3.23.8"
+  }
+  ,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevenpfiggins/bgg-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stevenpfiggins/bgg-mcp/issues"
+  },
+  "homepage": "https://github.com/stevenpfiggins/bgg-mcp#readme",
+  "engines": {
+    "node": ">=18"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
