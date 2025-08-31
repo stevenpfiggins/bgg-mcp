@@ -1,4 +1,8 @@
-# bgg-mcp - Docker guide
+# bgg-mcp - README
+
+Overview
+--------
+bgg-mcp is a compact Model Context Protocol (MCP) server implemented in TypeScript that exposes BoardGameGeek queries as MCP tools. It uses the MCP SDK, parses BGG's XML APIs with xml2js, and returns human-readable tool responses (search, game details, collections, plays, user info, hot items). The project compiles to `dist/` with TypeScript and includes Docker artifacts for building a production image or running locally for development.
 
 This repo contains a small MCP server implemented in TypeScript. These files let you build and run it inside Docker.
 
